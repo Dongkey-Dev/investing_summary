@@ -6,7 +6,7 @@
 
 크롤링된 데이터는 xlsx 확장명으로 저장됩니다.(엑셀)
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c9bb0c9-1f81-4fa6-9963-b259ceac42fa/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6c9bb0c9-1f81-4fa6-9963-b259ceac42fa/Untitled.png)
+![11](https://user-images.githubusercontent.com/57933815/92077519-8dcdc800-edf7-11ea-925b-27b9a854df2c.png)
 
 총 350개의 index가 저장됩니다.
 
@@ -91,7 +91,7 @@ summary 과정의 핵심 기술은 TextRank 입니다.
 
 의미있는 단어들의 상대 비중을 계산(각 단어의 중요성)한뒤, 그래프를 생성하고 이를 TextRank에 적용합니다.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d6d208ad-8a3a-435b-bafe-782bb6a898f5/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d6d208ad-8a3a-435b-bafe-782bb6a898f5/Untitled.png)
+![22](https://user-images.githubusercontent.com/57933815/92077524-8efef500-edf7-11ea-90ae-d24d7128f05f.png)
 
 TextRank가 높게 책정된 단어들은 keyword column에서 확인할 수 있습니다.
 
