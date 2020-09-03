@@ -14,6 +14,7 @@
 
 예시로 가장 상단의 기사( 'Cattle ship feared lost off Japan in storm, one crew member rescued' )를 summary 코드에 돌린다면,
 
+(기사 원본 Text)
 ```markup
 By Junko Fujita and Praveen Menon TOKYO/WELLINGTON (Reuters) - 
 A ship carrying 43 crew and nearly 6,000 cattle from New Zealand to China capsized after 
@@ -60,8 +61,8 @@ Agriculture Minister Damien O'Connor said.
 
 ```
 
-(기사 원본 Text)
 
+(Summary 처리된 Text)
 ```markup
 A ship carrying 43 crew and nearly 6,000 cattle from New Zealand to China capsized 
 after losing an engine in stormy weather in the East China Sea, the only crew member 
@@ -73,8 +74,6 @@ Last year, New Zealand's government launched a review of country's live export t
 worth around NZ$54 million ($37 million) in 2019, after thousands of animals being 
 exported from New Zealand and Australia died in transit.
 ```
-
-(Summary 처리된 Text)
 
 36줄 가량의 기사가 7줄로 요약되어 나옵니다.
 
