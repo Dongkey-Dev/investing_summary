@@ -1,6 +1,6 @@
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
-import pt_core_news_sm
+import en_core_web_sm
 import pandas as pd
 
 RESULT =  []
@@ -18,7 +18,7 @@ def summarize(df) :
 
         val=sorted(word_frequency.values())
         higher_word_frequencies = [word for word,freq in word_frequency.items() if freq in val[-3:]]
-        # print("\n----------------------------------------------\nWords with higher frequencies: ", higher_word_frequencies)
+        
         # gets relative frequency of words
         higher_frequency = val[-1]
         for word in word_frequency.keys():  
@@ -45,15 +45,15 @@ def summarize(df) :
         for i in range(len(summary)): 
             summary[i] = str(summary[i])
         text = ' '.join(summary) 
-        data = {"Text": row['Text'], "summary" : text, "url" : row['url'],"keyword" : ', '.join(higher_word_frequencies)}
+        data = {"Text": row['Text'], "summary" : text, "url" : row['url'],"keyword" : ', '.join(higher_word_frequencies), "Title":row['Title']}
         RESULT.append(data)
 
 if __name__=="__main__" :
-    nlp = pt_core_news_sm.load()
-    df = pd.read_excel("result_investing021537.xlsx")
+    nlp = en_core_web_sm.load()
+    df = pd.read_excel("result_investing031408.xlsx")
     df = df[~df['Text'].isnull()]
     summarize(df)
-    result_df = pd.DataFrame(RESULT, columns=['Text','summary','url','keyword'])
+    result_df = pd.DataFrame(RESULT, columns=['Text','summary','url','keyword','Title'])
     result_df.to_excel('summary_result.xlsx')
     
         

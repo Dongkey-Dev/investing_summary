@@ -43,15 +43,18 @@ def preparePageList() :
     for i in tqdm(news_list) :
         if i.text != '1' : 
             driver.get(ROOT + i.get('href'))
-        post = s.select('#leftColumn > div.largeTitle > article > a')
+        post = s.select('#leftColumn > div.largeTitle > article > div.textDiv > a')
         for j in post :
             cont_page = j.get('href')
+            title = j.text
             contents = crawling(cont_page)
-            data = {"Text" : contents, "url": cont_page}
+            while contents == '' :
+                contents = crawling(cont_page)
+            data = {"Text" : contents, "url": cont_page, "Title" : title}
             result.append(data)
 
     return result
 if __name__ == '__main__' :
     Result = preparePageList()
 
-    pd.DataFrame(Result, columns=['Text', 'url']).to_excel(f'result_investing' + datetime.today().strftime("%d%H%M") + ".xlsx")
+    pd.DataFrame(Result, columns=['Text', 'url','Title']).to_excel(f'result_investing' + datetime.today().strftime("%d%H%M") + ".xlsx")
